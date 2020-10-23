@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{%block head%}
+<title>Edit Posts</title>
+{%endblock%}
+
+{%block body%}
+<h1>New Post</h1>
+
+<hr>
+<h2>Create New Blog Post:</h2>
+<form action='/posts/new' method='POST'>
+    <label for="title">Title:</label>Title:
+    <input class="form-control mr-sm-2" type="text" aria-label="Enter Title" name="title" id="title">
+    <br>
+    <label for="author">Author:</label>
+    <input class="form-control mr-sm-2" type="text" aria-label="Enter Author" name="author" id="author">
+    <br>
+    <label for="content">Post:</label>
+    <textarea class="form-control" rows="3" name="content" id="content"></textarea>
+    <br>
+    <input type='submit' value='Post'>
+</form>
+<hr>
+
+{%endblock%}
