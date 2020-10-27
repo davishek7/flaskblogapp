@@ -3,15 +3,22 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///posts.db'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:1995@localhost/postgres'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+
 db=SQLAlchemy(app)
 
 class BlogPost(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     title=db.Column(db.String(100),nullable=False)
     content=db.Column(db.Text,nullable=False)
-    author=db.Column(db.String(50),nullable=False,default='N/A')
+    author=db.Column(db.String(50),nullable=False)
     date_posted=db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
+
+    def __init__(self,title,content,author):
+        self.title=title
+        self.content=content
+        self.author=author
 
     def __repr__(self):
         return 'Blog Post ' + str(self.id)
