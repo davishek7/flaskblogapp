@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 
 {%block head%}
-<script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
 <title>Edit Posts</title>
 {%endblock%}
 
@@ -12,10 +12,12 @@
 <h2>Editing a Post:</h2>
 <form action='/posts/edit/{{post.id}}' method='POST'>
     <label for="title">Title:</label>
-    <input class="form-control mr-sm-2" type="text" value="{{post.title}}" aria-label="Enter Title" name="title" id="title">
+    <input class="form-control mr-sm-2" type="text" value="{{post.title}}" aria-label="Enter Title" name="title"
+        id="title">
     <br>
     <label for="author">Author:</label>
-    <input class="form-control mr-sm-2" type="text" value="{{post.author}}" aria-label="Enter Author" name="author" id="author">
+    <input class="form-control mr-sm-2" type="text" value="{{post.author}}" aria-label="Enter Author" name="author"
+        id="author">
     <br>
     <label for="content">Post:</label>
     <textarea class="form-control" rows="3" name="content" id="content">{{post.content}}</textarea>
