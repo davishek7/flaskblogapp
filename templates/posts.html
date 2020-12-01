@@ -9,7 +9,7 @@
 <br>
 <div>
 <h1 style="display:inline">All Posts</h1>
-<a style="display:inline" class="btn btn-success float-right" href="/posts/new">+New Post</a>
+<a style="display:inline" class="btn btn-success float-right" href="{{url_for('new_post')}}">+New Post</a>
 </div>
 <hr>
 
@@ -23,8 +23,8 @@
 <br>
 <br>
 <p style="white-space:pre-wrap">{{ post.content | safe}}</p>
-<a class="btn btn-danger" href='/posts/delete/{{post.id}}'>Delete</a>
-<a class="btn btn-primary" href='/posts/edit/{{post.id}}'>Edit</a>
+<a class="btn btn-danger" href="{{url_for('delete',id=post.id)}}">Delete</a>
+<a class="btn btn-primary" href="{{url_for('edit',id=post.id)}}">Edit</a>
 <br>
 <hr>
 {%endfor%}
