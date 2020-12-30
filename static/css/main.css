@@ -1,4 +1,8 @@
 body{
     font-family:Helvetica;
-    
+    background-color:rgba(0,0,255,0.3) 43% rgba(0,0,255,5) 80%!important;
+}
+
+.bluenav{
+  background-color: #052b67;
 }
